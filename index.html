@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ray & Jenny's Wedding - 2027.05.15</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cat-orange: #D97724;
+      --cat-amber: #E8963D;
+      --cat-light-peach: #FDF4EB;
+      --cat-cream-bg: #FAF5EF;
+      --cat-deep-brown: #3F2C1F;
+      --cat-border: #E8D7C5;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--cat-cream-bg);
+      font-family: 'Noto Serif TC', serif;
+      color: var(--cat-deep-brown);
+      line-height: 1.8;
+      display: flex;
+      justify-content: center;
+      padding: 24px 12px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+      background: var(--white);
+      border: 2px solid var(--cat-deep-brown);
+      border-radius: 24px;
+      padding: 30px 18px;
+      box-shadow: 6px 6px 0px rgba(63, 44, 31, 0.12);
+      position: relative;
+    }
+
+    .inner-frame {
+      border: 1.5px dashed var(--cat-border);
+      border-radius: 16px;
+      padding: 20px 14px;
+    }
+
+    /* 1. 頂部標題 */
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .header-script {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: var(--cat-orange);
+      letter-spacing: 1px;
+    }
+
+    .header h1 {
+      font-size: 1.7rem;
+      letter-spacing: 2px;
+      margin: 4px 0 10px;
+      font-weight: 700;
+    }
+
+    .date-badge {
+      display: inline-block;
+      background: var(--cat-light-peach);
+      border: 1.5px solid var(--cat-deep-brown);
+      color: var(--cat-deep-brown);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 5px 18px;
+      border-radius: 20px;
+      box-shadow: 2px 2px 0px var(--cat-deep-brown);
+    }
+
+    /* 2. 主題經文區 */
+    .scripture-card {
+      background: #FFFDF9;
+      border-left: 3px solid var(--cat-orange);
+      padding: 14px 18px;
+      margin: 20px 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .scripture-text {
+      font-size: 0.92rem;
+      color: #5A4333;
+      font-style: italic;
+      line-height: 1.9;
+    }
+
+    .scripture-source {
+      text-align: right;
+      font-size: 0.8rem;
+      color: var(--cat-orange);
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    /* 3. 手繪插圖空間 */
+    .image-slot {
+      margin: 20px 0;
+      border: 2px dashed var(--cat-border);
+      background: var(--cat-light-peach);
+      border-radius: 16px;
+      overflow: hidden;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .image-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-slot-hint {
+      color: #9A7F6B;
+      font-size: 0.85rem;
+      padding: 20px;
+    }
+
+    /* 4. 倒數日期區 */
+    .countdown-section {
+      background: #FFF9F2;
+      border: 1.5px solid var(--cat-deep-brown);
+      border-radius: 16px;
+      padding: 16px 12px;
+      text-align: center;
+      margin: 25px 0;
+      box-shadow: 3px 3px 0px var(--cat-border);
+    }
+
+    .countdown-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--cat-orange);
+      margin-bottom: 12px;
+    }
+
+    .timer-grid {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .timer-box {
+      background: var(--white);
+      border: 1.5px solid var(--cat-deep-brown);
+      border-radius: 10px;
+      min-width: 54px;
+      padding: 6px 4px;
+      box-shadow: 2px 2px 0px var(--cat-deep-brown);
+    }
+
+    .timer-val {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--cat-orange);
+    }
+
+    .timer-lbl {
+      font-size: 0.65rem;
+      color: #8C735F;
+    }
+
+    .companion-banner {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      font-size: 0.78rem;
+      color: #6C5544;
+      padding-top: 8px;
+      border-top: 1px dashed #ECD8C7;
+    }
+
+    .section-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2rem;
+      color: var(--cat-orange);
+      text-align: center;
+      margin: 32px 0 16px;
+    }
+
+    /* 5. Our Story 區塊 */
+    .story-timeline {
+      position: relative;
+      margin: 0 10px 30px 22px;
+      padding-left: 22px;
+      border-left: 2px dashed #E0CBBB;
+    }
+
+    .story-card {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .story-paw {
+      position: absolute;
+      left: -32px;
+      top: 0px;
+      background: var(--white);
+      font-size: 16px;
+    }
+
+    .story-year {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cat-orange);
+    }
+
+    .story-heading {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 2px 0 4px;
+    }
+
+    .story-detail {
+      font-size: 0.85rem;
+      color: #6C5544;
+      line-height: 1.6;
+    }
+
+    .story-companion-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--cat-light-peach);
+      border: 1px solid var(--cat-border);
+      border-radius: 8px;
+      padding: 2px 8px;
+      font-size: 0.78rem;
+      margin-top: 6px;
+      color: var(--cat-deep-brown);
+    }
+
+    /* 6. Schedule 區 */
+    .schedule-card {
+      background: var(--cat-light-peach);
+      border: 1.5px solid var(--cat-deep-brown);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 3px 3px 0px rgba(63, 44, 31, 0.08);
+    }
+
+    .schedule-time {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cat-orange);
+    }
+
+    .schedule-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 4px 0 6px;
+    }
+
+    .schedule-location {
+      font-size: 0.85rem;
+      color: #634F40;
+      line-height: 1.6;
+    }
+
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: var(--cat-deep-brown);
+      background: var(--white);
+      border: 1.2px solid var(--cat-deep-brown);
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 1.5px 1.5px 0px var(--cat-deep-brown);
+    }
+
+    /* 7. 相片輪播區 */
+    .gallery-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 12px;
+      padding: 10px 4px 16px;
+      scrollbar-width: thin;
+    }
+
+    .gallery-item {
+      flex: 0 0 78%;
+      scroll-snap-align: center;
+      aspect-ratio: 4/5;
+      background: var(--cat-light-peach);
+      border: 1.5px solid var(--cat-deep-brown);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #927560;
+    }
+
+    .slider-hint {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #927560;
+      margin-top: -6px;
+      margin-bottom: 20px;
+    }
+
+    /* 8. 表單 */
+    .rsvp-form {
+      border-top: 1.5px dashed var(--cat-border);
+      padding-top: 24px;
+      margin-top: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--cat-deep-brown);
+      border-radius: 10px;
+      background: var(--white);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--cat-deep-brown);
+      outline: none;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .radio-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+
+    .radio-item input {
+      accent-color: var(--cat-orange);
+      width: 16px;
+      height: 16px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--cat-orange);
+      color: var(--white);
+      border: 2px solid var(--cat-deep-brown);
+      padding: 13px;
+      border-radius: 25px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 3px 3px 0px var(--cat-deep-brown);
+      transition: all 0.2s;
+      margin-top: 10px;
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .success-box {
+      display: none;
+      text-align: center;
+      padding: 18px;
+      background: #EAF3EB;
+      border: 1.5px solid #75A67C;
+      border-radius: 12px;
+      margin-top: 16px;
+      font-size: 0.95rem;
+    }
+
+    .ending-photo-slot {
+      margin-top: 35px;
+      border: 2px dashed var(--cat-border);
+      border-radius: 16px;
+      background: var(--cat-light-peach);
+      min-height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .footer-text {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #9C8575;
+      margin-top: 25px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="inner-frame">
+
+    <div class="header">
+      <div class="header-script">We are getting married!</div>
+      <h1>Ray & Jenny</h1>
+      <div class="date-badge">🐾 2027 . 05 . 15 Saturday</div>
+    </div>
+
+    <div class="scripture-card">
+      <div class="scripture-text">
+        「兩個人總比一個人好，因為二人勞碌同得美好的果效。若是跌倒，這人可以扶起他的同伴。」
+      </div>
+      <div class="scripture-source">—— 傳道書 4:9-10</div>
+    </div>
+
+    <div class="image-slot">
+      <div class="image-slot-hint">
+        🎨 <strong>【手繪插畫 / 封面圖片預留區】</strong><br>
+        可放入似顏繪或主婚紗照
+      </div>
+    </div>
+
+    <div class="countdown-section">
+      <div class="countdown-title">✦ 距離大喜之日倒數 ✦</div>
+      <div class="timer-grid">
+        <div class="timer-box"><div class="timer-val" id="d">00</div><div class="timer-lbl">DAYS</div></div>
+        <div class="timer-box"><div class="timer-val" id="h">00</div><div class="timer-lbl">HOURS</div></div>
+        <div class="timer-box"><div class="timer-val" id="m">00</div><div class="timer-lbl">MINS</div></div>
+        <div class="timer-box"><div class="timer-val" id="s">00</div><div class="timer-lbl">SECS</div></div>
+      </div>
+      <div class="companion-banner">
+        <span>💤 卡比獸</span> · <span>🦥 樹懶</span> · <span>🐅 老虎</span> · <span>🐾 橘貓阿東</span>
+      </div>
+    </div>
+
+    <div class="section-title">Our Story</div>
+    <div class="story-timeline">
+      <div class="story-card">
+        <div class="story-paw">🐾</div>
+        <div class="story-year">2021 . 09</div>
+        <div class="story-heading">校園相遇</div>
+        <div class="story-detail">在校園的走廊與日常裡悄悄相遇，故事從這裡翻開了第一頁。</div>
+        <div class="story-companion-tag">💤 伴隨我們啟程的卡比獸</div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-paw">🐾</div>
+        <div class="story-year">2023 . 02</div>
+        <div class="story-heading">初入社會的打滾與挑戰</div>
+        <div class="story-detail">面對全新職場與生活挑戰，幸好一路有你並肩支撐、彼此加油打氣。</div>
+        <div class="story-companion-tag">🦥 陪著我們慢慢穩健前進的樹懶</div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-paw">🐾</div>
+        <div class="story-year">2026</div>
+        <div class="story-heading">迎接貓貓阿東 · 決定邁入婚姻</div>
+        <div class="story-detail">家裡多了一位可愛的剪耳毛孩子「阿東」，有了彼此與貓，我們決定牽手一輩子。</div>
+        <div class="story-companion-tag">🐅 守護家人的老虎 ＆ 🐾 橘貓阿東</div>
+      </div>
+    </div>
+
+    <div class="section-title">Schedule</div>
+
+    <div class="schedule-card">
+      <div class="schedule-time">09:00 - 10:30 AM</div>
+      <div class="schedule-title">⛪ 結婚禮拜</div>
+      <div class="schedule-location">
+        <strong>地點：</strong>基督教宣道會台北堂<br>
+        <strong>地址：</strong>臺北市中山區力行里遼寧街83號
+      </div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=基督教宣道會台北堂" target="_blank">
+        📍 開啟 Google Map 導航
+      </a>
+    </div>
+
+    <div class="schedule-card">
+      <div class="schedule-time">12:30 - 15:30 PM</div>
+      <div class="schedule-title">🍽️ 婚禮午宴</div>
+      <div class="schedule-location">
+        <strong>地點：</strong>維多麗亞酒店 1 樓 宴會廳<br>
+        <strong>地址：</strong>台北市中山區敬業四路168號 1F<br>
+        <span style="color: #2D6835; font-size: 0.8rem; font-weight: 600;">🅿️ 酒店備有專屬賓客免費停車場</span>
+      </div>
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=維多麗亞酒店" target="_blank">
+        📍 開啟 Google Map 導航
+      </a>
+    </div>
+
+    <div class="section-title">Gallery</div>
+    <div class="gallery-slider">
+      <div class="gallery-item">📷 相片 1</div>
+      <div class="gallery-item">📷 相片 2</div>
+      <div class="gallery-item">📷 相片 3</div>
+      <div class="gallery-item">📷 相片 4</div>
+      <div class="gallery-item">📷 相片 5</div>
+    </div>
+    <div class="slider-hint">👉 左右滑動瀏覽更多照片 👈</div>
+
+    <!-- RSVP 表單：直接串接 Google Forms -->
+    <form class="rsvp-form" id="weddingForm">
+      <div class="section-title">RSVP 出席回覆</div>
+
+      <div class="form-group">
+        <label>您的姓名 *</label>
+        <input type="text" id="guestName" class="form-control" placeholder="請填寫您的尊姓大名" required>
+      </div>
+
+      <div class="form-group">
+        <label>聯絡電話 *</label>
+        <input type="tel" id="guestPhone" class="form-control" placeholder="0912-345-678" required>
+      </div>
+
+      <div class="form-group">
+        <label>電子信箱 *</label>
+        <input type="email" id="guestEmail" class="form-control" placeholder="example@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label>您是怎麼認識新人的？ *</label>
+        <input type="text" id="guestRelation" class="form-control" placeholder="例如：新郎大學同學、教會小組、新娘同事..." required>
+      </div>
+
+      <div class="form-group">
+        <label>預計出席場次 *</label>
+        <div class="radio-group">
+          <label class="radio-item">
+            <input type="radio" name="attendance" value="觀禮跟午宴我都到" checked>
+            ⛪🍽️ 觀禮跟午宴我都到
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="attendance" value="只觀禮不吃飯">
+            ⛪ 只觀禮不吃飯
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="attendance" value="只參加午宴">
+            🍽️ 只參加午宴
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="attendance" value="不克參加附上我的祝福">
+            💌 不克參加附上我的祝福～～
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>出席人數 *</label>
+        <select id="paxCount" class="form-control">
+          <option value="1">1 位</option>
+          <option value="2">2 位</option>
+          <option value="3">3 位</option>
+          <option value="4+">4 位以上</option>
+          <option value="0">0 位（無法出席，獻上祝福）</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>飲食習慣</label>
+        <select id="dietary" class="form-control">
+          <option value="葷食">葷食</option>
+          <option value="全素">全素</option>
+          <option value="蛋奶素">蛋奶素</option>
+          <option value="鍋邊素">鍋邊素</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>想對我們說的話</label>
+        <textarea id="blessingMessage" class="form-control" rows="3" placeholder="給新人與貓貓阿東的祝福話語..."></textarea>
+      </div>
+
+      <button type="submit" id="submitBtn" class="submit-btn">送出出席回覆 🐾</button>
+    </form>
+
+    <div id="successBox" class="success-box">
+      🎉 感謝您的回覆！我們與阿東、夥伴們期待在 2027/05/15 與您相見！
+    </div>
+
+    <div class="section-title">Happy Ending</div>
+    <div class="ending-photo-slot">
+      <div class="image-slot-hint">
+        🐾 <strong>【頁尾幸福照片空間】</strong><br>
+        可放置與毛孩阿東的大合照
+      </div>
+    </div>
+
+    <div class="footer-text">
+      With Love · Ray & Jenny 2027
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // 倒數計時器
+  const targetDate = new Date("2027-05-15T09:00:00").getTime();
+  function refreshTimer() {
+    const distance = targetDate - new Date().getTime();
+    if (distance > 0) {
+      document.getElementById("d").innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+      document.getElementById("h").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+      document.getElementById("m").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+      document.getElementById("s").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+    }
+  }
+  setInterval(refreshTimer, 1000);
+  refreshTimer();
+
+  // ----------------------------------------------------
+  // Google 表單背景串接設定區
+  // ----------------------------------------------------
+  // 1. 請將下方 YOUR_FORM_ID 替換為你的 Google 表單 ID
+  const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/formResponse";
+
+  // 2. 請將下方 entry 編號替換為第一步抓到的真實 entry ID
+  const FORM_ENTRIES = {
+    name: "entry.1000001",
+    phone: "entry.1000002",
+    email: "entry.1000003",
+    relation: "entry.1000004",
+    attendance: "entry.1000005",
+    pax: "entry.1000006",
+    diet: "entry.1000007",
+    message: "entry.1000008"
+  };
+
+  document.getElementById("weddingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const btn = document.getElementById("submitBtn");
+    btn.disabled = true;
+    btn.innerText = "資料送出中...";
+
+    const formData = new FormData();
+    formData.append(FORM_ENTRIES.name, document.getElementById("guestName").value);
+    formData.append(FORM_ENTRIES.phone, document.getElementById("guestPhone").value);
+    formData.append(FORM_ENTRIES.email, document.getElementById("guestEmail").value);
+    formData.append(FORM_ENTRIES.relation, document.getElementById("guestRelation").value);
+    formData.append(FORM_ENTRIES.attendance, document.querySelector('input[name="attendance"]:checked').value);
+    formData.append(FORM_ENTRIES.pax, document.getElementById("paxCount").value);
+    formData.append(FORM_ENTRIES.diet, document.getElementById("dietary").value);
+    formData.append(FORM_ENTRIES.message, document.getElementById("blessingMessage").value);
+
+    // 透過 mode: 'no-cors' 無痕提交給 Google Forms
+    fetch(GOOGLE_FORM_ACTION_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: formData
+    }).then(() => {
+      document.getElementById("weddingForm").style.display = "none";
+      document.getElementById("successBox").style.display = "block";
+    }).catch(err => {
+      // 容錯機制：即使跨域被擋仍視為完成並通知使用者
+      document.getElementById("weddingForm").style.display = "none";
+      document.getElementById("successBox").style.display = "block";
+    });
+  });
+</script>
+
+</body>
+</html>
